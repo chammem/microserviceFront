@@ -1,0 +1,64 @@
+<div class="order-container">
+    <!-- Formulaire de commande à gauche -->
+    <div class="order-form">
+      <h2>BILLING DETAILS</h2>
+      <form  [formGroup]="f" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="nomClient">Nom*</label>
+          <input type="text" id="nomClient" name="nomClient" required>
+        </div>
+        <div class="form-group">
+          <label for="prenomClient">Prénom*</label>
+          <input type="text" id="prenomClient" name="prenomClient" required>
+        </div>
+        <div class="form-group">
+          <label for="adresseClient">Adresse*</label>
+          <input type="text" id="adresseClient" name="adresseClient" required>
+        </div>
+        <div class="form-group">
+          <label for="codePostal">Code Postal*</label>
+          <input type="text" id="codePostal" name="codePostal" required>
+        </div>
+        <div class="form-group">
+          <label for="telephone">Numéro de Téléphone*</label>
+          <input type="tel" id="telephone" name="telephone" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Adresse Email*</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="notes">Order Notes</label>
+          <textarea id="notes" name="notes" rows="4"></textarea>
+        </div>
+        <button type="submit" class="submit-btn" [disabled]="f.invalid">Passer la commande</button>
+      </form>
+    </div>
+  
+    <!-- Récapitulatif de la commande à droite -->
+    <div class="order-summary">
+      <h2>Votre Commande</h2>
+      <div class="product-list">
+        <div class="product-item">
+          <span class="product-name">01. Vanilla salted caramel</span>
+          <span class="product-price">$300.00</span>
+        </div>
+        <div class="product-item">
+          <span class="product-name">02. German chocolate</span>
+          <span class="product-price">$170.00</span>
+        </div>
+        <div class="product-item">
+          <span class="product-name">03. Sweet autumn</span>
+          <span class="product-price">$170.00</span>
+        </div>
+        <div class="product-item">
+          <span class="product-name">04. Gluten free mini dozen</span>
+          <span class="product-price">$110.00</span>
+        </div>
+      </div>
+      <div class="order-total">
+        <p>Subtotal <span>$750.99</span></p>
+        <p>Total <span>$750.99</span></p>
+      </div>
+    </div>
+  </div>
