@@ -1,23 +1,24 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './theme/layout/admin/admin.component';
-import { GuestComponent } from './theme/layout/guest/guest.component';
 import { HomeComponent } from './home/home.component';
 import AuthSigninComponent from './demo/pages/authentication/auth-signin/auth-signin.component';
 import AuthSignupComponent from './demo/pages/authentication/auth-signup/auth-signup.component';
 import { PanierComponent } from './panier/panier.component';
 import { CommandeComponent } from './commande/commande.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: HomeComponent // Route racine pour HomeComponent
+    path: '',component: HomeComponent // Route racine pour HomeComponent
   }
   ,
   { path: 'auth/signin', component: AuthSigninComponent },
   { path: 'auth/signup', component: AuthSignupComponent },
   { path: 'panier', component: PanierComponent },
   { path: 'commande', component: CommandeComponent },
+  { path: 'confirmation/:orderId', component: ConfirmationComponent },
+
   {
     path: 'admin',
     component: AdminComponent,
@@ -55,7 +56,7 @@ const routes: Routes = [
   },
   {
     path: '**', 
-    redirectTo: '' // Redirige toutes les routes non trouvées vers la page d'accueil
+    redirectTo: ''
   }
 
 ];
